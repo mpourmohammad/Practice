@@ -1,9 +1,10 @@
 public class MethodTest {
     public static void main(String[] args) {
-        greetUser("Meysam");
+        String a = greetUser("Meysam");
+        System.out.println(a);
     }
 
-    public static void greetUser(String name) {
-        System.out.println("Hello, " + name + "!");
+    public static String greetUser(String name) {
+        return "Hello, " + name + "!";
     }
 }
