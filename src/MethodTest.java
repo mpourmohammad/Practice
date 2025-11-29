@@ -1,6 +1,6 @@
 public class MethodTest {
     public static void main(String[] args) {
-        String a = greetUser("Meysam");
+        String a = greetUser("test");
         System.out.println(a);
     }
 
