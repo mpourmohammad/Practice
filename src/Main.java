@@ -30,7 +30,7 @@ public class Main {
         }
     }
 
-    public static double calculateMortgage(int principal, float annualInterest, byte years) {
+    private static double calculateMortgage(int principal, float annualInterest, byte years) {
         float monthlyInterest = annualInterest / PRECENT / MONTHS_IN_YEAR;
         float numberOfPayments = years * MONTHS_IN_YEAR;
 
@@ -38,7 +38,7 @@ public class Main {
                 (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
     }
 
-    public static double readNumber(String prompt, double min, double max) {
+    private static double readNumber(String prompt, double min, double max) {
         Scanner scanner = new Scanner(System.in);
         double value;
         while (true) {
@@ -51,7 +51,7 @@ public class Main {
         return value;
     }
 
-    public static double calculateBalance(int principal, float annualInterest, byte years, short numberOfPaymentsMade) {
+    private static double calculateBalance(int principal, float annualInterest, byte years, short numberOfPaymentsMade) {
         float monthlyInterest = annualInterest / PRECENT / MONTHS_IN_YEAR;
         float numberOfPayments = years * MONTHS_IN_YEAR;
         return principal *
