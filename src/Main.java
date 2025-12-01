@@ -57,5 +57,6 @@ public class Main {
         return principal *
                 (Math.pow(1 + monthlyInterest, numberOfPayments) - Math.pow(1 + monthlyInterest, numberOfPaymentsMade))
                 / (Math.pow(1 + monthlyInterest, numberOfPaymentsMade) - 1);
+
     }
 }
