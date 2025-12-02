@@ -1,14 +1,13 @@
 import java.text.NumberFormat;
-import java.util.Scanner;
 
 public class Main {
     final static byte MONTHS_IN_YEAR = 12;
     final static byte PRECENT = 100;
 
     public static void main(String[] args) {
-        int principal = (int) readNumber("Principal: ", 1000, 1_000_000);
-        float annualInterest = (float) readNumber("Annual Interest Rate: ", 1, 30);
-        byte years = (byte) readNumber("Period (Years): ", 1, 30);
+        int principal = (int) Console.readNumber("Principal: ", 1000, 1_000_000);
+        float annualInterest = (float) Console.readNumber("Annual Interest Rate: ", 1, 30);
+        byte years = (byte) Console.readNumber("Period (Years): ", 1, 30);
 
         PrintMortgage(principal, annualInterest, years);
         printPaymentSchedule(years, principal, annualInterest);
@@ -38,19 +37,6 @@ public class Main {
                 (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
     }
 
-    private static double readNumber(String prompt, double min, double max) {
-        Scanner scanner = new Scanner(System.in);
-        double value;
-        while (true) {
-            System.out.println(prompt);
-            value = scanner.nextFloat();
-            if (value >= min && value <= max)
-                break;
-            System.out.println("Enter a value between " + min + " and " + max);
-        }
-        return value;
-    }
-
     private static double calculateBalance(int principal, float annualInterest, byte years, short numberOfPaymentsMade) {
         float monthlyInterest = annualInterest / PRECENT / MONTHS_IN_YEAR;
         float numberOfPayments = years * MONTHS_IN_YEAR;
@@ -60,3 +46,5 @@ public class Main {
 
     }
 }
+
+
