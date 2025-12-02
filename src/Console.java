@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 public class Console {
+    final static Scanner scanner = new Scanner(System.in);
+
     public static double readNumber(String prompt, double min, double max) {
-        Scanner scanner = new Scanner(System.in);
         double value;
         while (true) {
             System.out.println(prompt);
@@ -12,5 +13,9 @@ public class Console {
             System.out.println("Enter a value between " + min + " and " + max);
         }
         return value;
+    }
+
+    public static double readNumber(String prompt) {
+        return scanner.nextDouble();
     }
 }
